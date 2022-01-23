@@ -26,6 +26,9 @@ const home = require("./src/routes/home");
 //앱 셋팅
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
+app.use(express.static(`${__dirname}/src/public`));
+// __dirname은 server.js가 있는 디렉토리명을 반환 즉 app폴더
+// static은 정적 경로로 추가해 주겠다는 의미
 
 
 app.use("/", home);  // use -> 미들 웨어를 등록해주는 메서드(여기서는 라우팅으로 연결시킴)
